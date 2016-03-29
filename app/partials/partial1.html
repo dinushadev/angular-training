@@ -1,0 +1,80 @@
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="container" ng-controller="AddCarCtrl">
+    <!-- Example row of columns -->
+    <div class="col-md-12">
+        <div class="panel panel-info">
+            <div class="panel-body">Panel Content</div>
+        </div>
+    </div>
+    <div class="col-md-7">
+        <div class="panel panel-info">
+            <div class="panel-heading">CAR LIST</div>
+            <div class="panel-body">
+                <div class="panel panel-default">
+                    <!-- Default panel contents -->
+                    <!-- Table -->
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Make</th>
+                                <th>Model</th>
+                                <th>Price</th>
+                                <th>Condition</th>
+                                <th>Ops</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                           
+                            <tr ng-repeat="car in carList">
+                                <td>{{car.make}}</td>
+                                <td>{{car.model}}</td>
+                                <td>{{car.price}}</td>
+                                <td>{{car.condition}}</td>
+                                <td>
+                                    <button class="btn btn-xs btn-info" ng-click="editCar(car.id)">Edit</button>
+                                    <button class="btn btn-xs btn-success" ng-click="soldCar(car.id)">Sold</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-5">
+        <div class="panel panel-info">
+            <div class="panel-heading">ADD NEW CAR</div>
+            <div class="panel-body">
+                <div class="panel-body">
+                </div>
+                <form>
+                    <fieldset class="form-group">
+                        <!--     <label for="formGroupExampleInput">Make</label> -->
+                        <input type="text" class="form-control" ng-model="car.make" id="makeTxt" placeholder="Make">
+                    </fieldset>
+                    <fieldset class="form-group">
+                        <!--     <label for="formGroupExampleInput2">Molel</label> -->
+                        <input type="text" class="form-control" ng-model="car.model" id="modelTxt" placeholder="Model">
+                    </fieldset>
+                    <div class="form-group">
+                        <label class="sr-only" for="exampleInputAmount">Amount (in Rupe)</label>
+                        <div class="input-group">
+                            <div class="input-group-addon">Rs</div>
+                            <input type="text" class="form-control" ng-model="car.price" id="priceTxt" placeholder="Price">
+                        </div>
+                    </div>
+                    <div>
+                        <label class="radio-inline">
+                            <input type="radio" name="inlineRadioOptions" ng-model="car.condition" id="newRb" value="New"> Brand New
+                        </label>
+                        <label class="radio-inline">
+                            <input type="radio" name="inlineRadioOptions" ng-model="car.condition" id="usedRb" value="Used"> Used
+                        </label>
+                    </div>
+                    <p></p>
+                </form>
+                <p><a class="btn btn-sm btn-primary btn-block" role="button" ng-click="addNewCar()">Add Car &raquo;</a></p>
+            </div>
+        </div>
+    </div>
+</div>
