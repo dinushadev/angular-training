@@ -1,5 +1,5 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="container" ng-controller="AddCarCtrl">
+<div class="container" ng-controller="CarCtrl">
     <!-- Example row of columns -->
     <div class="col-md-12">
         <div class="panel panel-info">
@@ -73,7 +73,9 @@
                     </div>
                     <p></p>
                 </form>
-                <p><a class="btn btn-sm btn-primary btn-block" role="button" ng-click="addNewCar()">Add Car &raquo;</a></p>
+                <p><a class="btn btn-sm btn-primary btn-block" role="button" ng-hide="isEditMood" ng-click="addNewCar()">Add Car &raquo;</a>
+                <a class="btn btn-sm btn-primary btn-block" role="button" ng-show="isEditMood" ng-click="updateCar()">Edit Car &raquo;</a>
+                </p>
             </div>
         </div>
     </div>

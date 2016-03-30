@@ -12,7 +12,7 @@ angular.module('myApp')
 		
 		LoginSvc.login($scope.user,function(responce){
 			if(responce.success){
-				$location.path('view1');
+				$location.path('home');
 			}else{
 				console.log(responce.message);
 			}
