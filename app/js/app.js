@@ -19,7 +19,7 @@ config( function($stateProvider,$urlRouterProvider) {
 
   })
   .state('about',{
-  	url:"home",
+  	url:"/about",
   	templateUrl:"partials/about.html"
   });
 
