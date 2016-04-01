@@ -17,6 +17,6 @@
   "scripts": {
     "postinstall": "bower install",
     "prestart": "npm install",
-    "start": "node_modules/.bin/browser-sync start --files 'css/*.css, js/**/*.js, *.html, partials/*.html' --server 'app'"
+    "start": "node_modules/.bin/browser-sync start --files 'app/css/*.css, app/js/**/*.js, app/*.html, app/partials/*.html' --server 'app'"
     }
 }

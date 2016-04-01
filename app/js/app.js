@@ -3,12 +3,28 @@
 
 
 angular.module('myApp', [
-  'ngRoute'
+  'ui.router'
 ]).
-config(['$routeProvider', function($routeProvider) {
-  $routeProvider.when('/home', {templateUrl: 'partials/home.html'});
-  $routeProvider.when('/about', {templateUrl: 'partials/about.html', controller: 'MyCtrl2'});
-   $routeProvider.when('/login', {templateUrl: 'partials/login.html'});
-  $routeProvider.otherwise({redirectTo: '/login'});
-}]);
+config( function($stateProvider,$urlRouterProvider) {
+  
+
+  $stateProvider.state('login',{
+  	url:'/login',
+  	templateUrl:'partials/login.html'
+  	  })
+  .state('home',{
+  	 url:"/home",
+  	 templateUrl:"partials/home.html",
+  	controller:'CarCtrl'
+
+  })
+  .state('about',{
+  	url:"home",
+  	templateUrl:"partials/about.html"
+  });
+
+
+  $urlRouterProvider.otherwise("/login");
+
+});
 
