@@ -1,9 +1,18 @@
 <!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="container" >
+<div class="container">
     <!-- Example row of columns -->
     <div class="col-md-12">
         <div class="panel panel-info">
-            <div class="panel-body">Panel Content</div>
+            <div class="panel-body">
+                <dn-car-make-survey />
+            </div>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="panel panel-info">
+            <div class="panel-body">
+                <p>Now {{carList.length}}car(s) avilable for sail</p>
+            </div>
         </div>
     </div>
     <div class="col-md-7">
@@ -13,30 +22,7 @@
                 <div class="panel panel-default">
                     <!-- Default panel contents -->
                     <!-- Table -->
-                    <table class="table table-striped">
-                        <thead>
-                            <tr>
-                                <th>Make</th>
-                                <th>Model</th>
-                                <th>Price</th>
-                                <th>Condition</th>
-                                <th>Ops</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                           
-                            <tr ng-repeat="car in carList">
-                                <td>{{car.make}}</td>
-                                <td>{{car.model}}</td>
-                                <td>{{car.price}}</td>
-                                <td>{{car.condition}}</td>
-                                <td>
-                                    <button class="btn btn-xs btn-info" ng-click="editCar(car.id)">Edit</button>
-                                    <button class="btn btn-xs btn-success" ng-click="soldCar(car.id)">Sold</button>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div dn-car-list></div>
                 </div>
             </div>
         </div>
@@ -74,7 +60,7 @@
                     <p></p>
                 </form>
                 <p><a class="btn btn-sm btn-primary btn-block" role="button" ng-hide="isEditMood" ng-click="addNewCar()">Add Car &raquo;</a>
-                <a class="btn btn-sm btn-primary btn-block" role="button" ng-show="isEditMood" ng-click="updateCar()">Edit Car &raquo;</a>
+                    <a class="btn btn-sm btn-primary btn-block" role="button" ng-show="isEditMood" ng-click="updateCar()">Edit Car &raquo;</a>
                 </p>
             </div>
         </div>

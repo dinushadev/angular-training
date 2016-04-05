@@ -8,6 +8,7 @@ angular.module('myApp')
         $scope.carsSvc = CarSvc;
         $scope.carList = $scope.carsSvc.getAllCars();
         $scope.isEditMood = false;
+        $scope.totCars =  $scope.carList.length;
 
         $scope.addNewCar = function() {
 

@@ -17,7 +17,7 @@ angular.module('myApp').service('CarSvc', function($http, carList) {
             };
 
             if (!response.success) {
-                response.message = 'Username or password is incorrect';
+                response.message = 'Error in inserting car';
             }
             callback(response);
         },
