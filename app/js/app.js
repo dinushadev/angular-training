@@ -3,7 +3,7 @@
 
 
 angular.module('myApp', [
-    'ui.router'
+    'ui.router',
 ]).
 config(function($stateProvider, $urlRouterProvider) {
 
@@ -45,10 +45,10 @@ config(function($stateProvider, $urlRouterProvider) {
                     controller: function($scope) {
                         $scope.links = [{
                                 value: 'Angular Js',
-                                link: 'angular.io'
+                                link: 'www.angularjs.org'
                             }, {
                                 value: 'React Js',
-                                link: 'react.io'
+                                link: 'www.facebook.github.io/react/'
                             }
 
                         ];

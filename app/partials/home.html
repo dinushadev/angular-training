@@ -20,9 +20,9 @@
             <div class="panel-heading">CAR LIST</div>
             <div class="panel-body">
                 <div class="panel panel-default">
-                    <!-- Default panel contents -->
                     <!-- Table -->
-                    <div dn-car-list></div>
+                    <img src="img/spinner.gif"  ng-hide="ready" width="200xp" />
+                    <div dn-car-list ng-clock ng-show="ready" ></div>
                 </div>
             </div>
         </div>

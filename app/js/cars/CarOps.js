@@ -6,12 +6,12 @@
 
 
 angular.module('myApp').
-  directive('dnCarOps',  function() {
+directive('dnCarOps', function() {
     return {
-    	 restrict: 'E',
-    	 template: '	 <button class="btn btn-xs btn-info" ng-click="editCar(car.id)">Edit{{car.id}}</button>'+
-                '<button class="btn btn-xs btn-success" ng-click="soldCar(car.id)">Sold</button>'+
-				'</div>',
+        restrict: 'E',
+        template: '	 <button class="btn btn-xs btn-info" ng-click="editCar(car)">Edit</button>' +
+            '<button class="btn btn-xs btn-success" ng-click="soldCar(car)">Sold</button>' +
+            '</div>',
 
     }
-  });
+});
