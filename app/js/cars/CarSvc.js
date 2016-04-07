@@ -3,9 +3,8 @@
 /* Services */
 
 
-angular.module('myApp').service('CarSvc', function($http, carList) {
-
-
+angular.module('myApp').factory('CarSvc', function($http,carList) {
+  
     return {
         addCar: function(newCar, callback) {
             console.log("Make: %s  Model:%s  Price:%s", newCar.make, newCar.model, newCar.price);
@@ -17,11 +16,13 @@ angular.module('myApp').service('CarSvc', function($http, carList) {
             };
 
             if (!response.success) {
-                response.message = 'Username or password is incorrect';
+                response.message = 'Error in inserting car';
             }
+
             callback(response);
         },
         getAllCars: function() {
+
             return carList;
         },
 
@@ -29,8 +30,11 @@ angular.module('myApp').service('CarSvc', function($http, carList) {
             return carList[id - 1];
         },
 
-        deleteCarById: function(id) {
-            carList = carList.slice(id - 1, 1);
+        deleteCarById: function(car) {
+            console.log('deleting id:'+car.id);
+             carList.splice(carList.indexOf(car), 1);
+            console.log(carList.length);
+           
         }
     }
 });

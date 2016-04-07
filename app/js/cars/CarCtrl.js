@@ -5,15 +5,21 @@
 angular.module('myApp')
     .controller('CarCtrl', ['$scope', 'CarSvc', function($scope, CarSvc) {
         $scope.car = {};
-        $scope.carsSvc = CarSvc;
-        $scope.carList = $scope.carsSvc.getAllCars();
         $scope.isEditMood = false;
-
-        $scope.addNewCar = function() {
+        $scope.ready = false;
+       // $scope.carList =[];
+      //  $scope.carList =CarSvc.getAllCars();
+      // $scope.carList =[];
+      
+          $scope.carList =CarSvc.getAllCars();
+          $scope.ready = true;
+        //  $scope.$apply();
+         
+          $scope.addNewCar = function() {
 
             console.log($scope.car);
 
-             $scope.carsSvc.addCar($scope.car, function(responce) {
+             CarSvc.addCar($scope.car, function(responce) {
                 if (responce.success) {
                     console.log(responce.message);
                     $scope.car ={};
@@ -24,15 +30,15 @@ angular.module('myApp')
             });
         };
 
-        $scope.editCar = function(carId) {
-        	console.log('editing car id %s',carId);
-            $scope.car =  $scope.carsSvc.getCarById(carId);
+        $scope.editCar = function(car) {
+            console.log('editing car id %s',car.id);
+            $scope.car =  car;
             $scope.isEditMood =true;
         };
 
-        $scope.soldCar = function(carId) {
-        	console.log('deleting car id %s',carId);
-             $scope.carsSvc.deleteCarById(carId);
+        $scope.soldCar = function(car) {
+            console.log('deleting car id %s',car.id);
+             CarSvc.deleteCarById(car);
         };
 
         $scope.updateCar = function(){
