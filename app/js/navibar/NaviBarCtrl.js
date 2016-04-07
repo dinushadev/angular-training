@@ -3,8 +3,10 @@
 /* Controllers */
 
 angular.module('myApp')
-.controller('NavBarCtrl', ['$scope','identity', function($scope,$rootScope, identity) {
-//	console.log( $rootScope.identity.username);
+.controller('NavBarCtrl', ['$scope','$rootScope','identity', function($scope,$rootScope, identity) {
+	console.log( identity.username);
+	$scope.identity = identity;
+	identity.username = 'test';
 	if($rootScope.identity){
 		$scope.userName =  $rootScope.identity.username;
 		console.log( $rootScope.identity.username);	

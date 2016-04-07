@@ -41,7 +41,6 @@ angular.module('myApp')
 
 
 .value('identity', {
-    username: 'name'
 })
 
 
