@@ -8,7 +8,6 @@ angular.module('myApp')
 
 	$scope.login = function(){
 
-		console.log($scope.user.email);
 		
 		LoginSvc.login($scope.user,function(responce){
 			if(responce.success){

@@ -20,11 +20,9 @@ angular.module('myApp').service('LoginSvc', function($http, $rootScope, identity
 
                 user.authtoken = 'test token'; //set test value
 
-                identity = {
-                    username: user.uname,
-                    authdata: user.authtoken
+                identity.username = user.uname;
+                identity.authtoken = user.authtoken;
 
-                };
                  console.log('Access Globle data: '+identity.username);
 
                 $http.defaults.headers.common['Authorization'] = 'token ' + user.authtoken;
