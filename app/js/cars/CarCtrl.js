@@ -30,19 +30,5 @@ angular.module('myApp')
             });
         };
 
-        $scope.editCar = function(car) {
-            console.log('editing car id %s',car.id);
-            $scope.car =  car;
-            $scope.isEditMood =true;
-        };
-
-        $scope.soldCar = function(car) {
-            console.log('deleting car id %s',car.id);
-             CarSvc.deleteCarById(car);
-        };
-
-        $scope.updateCar = function(){
-              $scope.isEditMood = false;
-              $scope.car ={};
-          };
+      
     }]);

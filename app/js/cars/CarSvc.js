@@ -24,17 +24,8 @@ angular.module('myApp').factory('CarSvc', function($http,carList) {
         getAllCars: function() {
 
             return carList;
-        },
-
-        getCarById: function(id) {
-            return carList[id - 1];
-        },
-
-        deleteCarById: function(car) {
-            console.log('deleting id:'+car.id);
-             carList.splice(carList.indexOf(car), 1);
-            console.log(carList.length);
-           
         }
+
+      
     }
 });
