@@ -9,8 +9,15 @@ Bower
 npm install -g bower
 ```
 
+###Clone the project
+ ```sh
+git clone https://github.com/dinushadev/angular-training.git
+```
 
-###build application 
+npm install -g bower
+```
+
+###Build application 
 ```sh
 npm install
 ```
