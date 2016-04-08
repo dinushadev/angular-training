@@ -21,9 +21,6 @@ cd angular-training
 ```
 
 
-npm install -g bower
-```
-
 ###Build application 
 ```sh
 npm install
