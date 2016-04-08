@@ -19,8 +19,6 @@ git clone -b finished https://github.com/dinushadev/angular-training.git
 cd angular-training
 ```
 
-npm install -g bower
-```
 
 ###Build application 
 ```sh
