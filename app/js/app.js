@@ -18,10 +18,18 @@ config(function($stateProvider, $urlRouterProvider) {
             controller: 'CarCtrl'
 
         })
-        /* .state('about', {
-             url: "/about",
-             templateUrl: "partials/about.html"
-         })*/
+        .state('message',{
+            url:'/message/:msg',
+         //   templateUrl:"partials/message.html",
+            templateUrl:function($stateParams){
+                    return 'partials/message/'+$stateParams.msg+'.html';
+            }
+
+            /*,controller:function($scope, $stateParams){
+                $scope.msg = $stateParams.msg;
+            }*/
+        })
+     
         .state('about', {
             url: '/about',
             views: {
