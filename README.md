@@ -1,7 +1,8 @@
 #angular-seed — the seed for AngularJS training
 This use Bootstap, Angular Js 
 ##Pre request
-GIT,
+GIT
+
 Node JS
 
 Bower
@@ -14,6 +15,11 @@ npm install -g bower
  ```sh
 git clone https://github.com/dinushadev/angular-training.git
 ```
+
+```sh
+cd angular-training
+```
+
 
 npm install -g bower
 ```
@@ -29,3 +35,4 @@ npm start
 ```
 
 
+##[Goto Finished Project](https://github.com/dinushadev/angular-training/tree/finished)
